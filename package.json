@@ -1,0 +1,22 @@
+{
+  "name": "movie-magic-may-2025",
+  "version": "1.0.0",
+  "description": "SoftUni JS Back-End Course Workshop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivailopapazov/movie-magic-may-2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ivailopapazov/movie-magic-may-2025/issues"
+  },
+  "homepage": "https://github.com/ivailopapazov/movie-magic-may-2025#readme"
+}
