@@ -10,6 +10,9 @@ const app = express();
 // Add static middleware
 app.use(express.static('./src/public'));
 
+// Add body parser
+app.use(express.urlencoded());
+
 // Add and config view engine
 app.engine('hbs', handlebars.engine({
     extname: 'hbs',
