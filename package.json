@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ivailopapazov/movie-magic-may-2025#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3"
   }
 }
