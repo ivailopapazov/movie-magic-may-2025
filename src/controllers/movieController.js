@@ -4,7 +4,7 @@ import movieService from '../services/movieService.js';
 const movieController = express.Router();
 
 movieController.get('/create', (req, res) => {
-    res.render('create'); 
+    res.render('create');
 });
 
 movieController.post('/create', (req, res) => {
@@ -19,9 +19,12 @@ movieController.post('/create', (req, res) => {
 
 movieController.get('/:movieId/details', (req, res) => {
     // Get movie id from params
-    const movieId = req.params.movieId; 
+    const movieId = req.params.movieId;
 
-    res.render('details');
+    // Get movie data
+    const movie = movieService.getOne(movieId);
+
+    res.render('details', { movie });
 });
 
 export default movieController;

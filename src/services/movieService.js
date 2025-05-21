@@ -44,5 +44,10 @@ export default {
         movies.push(movieData);
 
         return movieData;
+    },
+    getOne(movieId) {
+        const movie = movies.find(movie => movie.id === movieId)
+
+        return movie;
     }
 }
