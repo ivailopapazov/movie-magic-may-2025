@@ -1,4 +1,5 @@
 import express from 'express'
+import movieService from '../services/movieService.js';
 
 const movieController = express.Router();
 
@@ -10,10 +11,10 @@ movieController.post('/create', (req, res) => {
     const newMovie = req.body;
 
     // Save Movie
+    movieService.create(newMovie);
 
     // Redirect to home page
-
-    res.end();
+    res.redirect('/');
 });
 
 export default movieController;

@@ -37,5 +37,12 @@ const movies = [
 export default {
     getAll() {
         return movies;
+    },
+    create(movieData) {
+        // TODO: set unique id
+
+        movies.push(movieData);
+
+        return movieData;
     }
 }
