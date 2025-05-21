@@ -12,6 +12,9 @@ app.engine('hbs', handlebars.engine({
 // Set default engine
 app.set('view engine', 'hbs');
 
+// Set default view folder
+app.set('views', './src/views');
+
 // Config routes
 app.get('/', (req, res) => {
     res.render('home', { layout: false });
