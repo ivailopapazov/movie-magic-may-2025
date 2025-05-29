@@ -22,14 +22,13 @@ movieController.get('/:movieId/details', async (req, res) => {
     // Get movie id from params
     const movieId = req.params.movieId;
 
-    // Get movie data
+    // Get movie data with populated casts
     const movie = await movieService.getOne(movieId);
 
     // Get movie cast
-    // const casts = await castService.getAll({movieId})
-    const casts = await movieService.getCasts(movieId)
+    // const casts = await movieService.getCasts(movieId)
 
-    res.render('movie/details', { movie, casts });
+    res.render('movie/details', { movie });
 });
 
 movieController.get('/search', async (req, res) => {
