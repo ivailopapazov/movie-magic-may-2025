@@ -2,7 +2,7 @@
 SoftUni JS Back-End Course Workshop
 
 ## Bonuses
- - [ ] DB Movies Filtering
- - [ ] Extract rotues
+ - [x] DB Movies Filtering
  - [ ] Filter already attached cast
+ - [ ] Extract rotues
  - [ ] Name in movie
