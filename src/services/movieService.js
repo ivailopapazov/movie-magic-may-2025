@@ -1,9 +1,10 @@
 import Movie from '../models/Movie.js';
+import Cast from '../models/Cast.js';
 
 export default {
     async getAll(filter = {}) {
         let result = await Movie.find({}).lean();
-        
+
         if (filter.search) {
             result = result.filter(movie => movie.title.toLowerCase().includes(filter.search.toLowerCase()));
         }
@@ -36,5 +37,13 @@ export default {
         movie.casts.push(castId);
 
         return movie.save();
+    },
+    async getCasts(movieId) {
+        const movie = await this.getOne(movieId);
+
+        const casts = await Cast.find({ _id: { $in: movie.casts } }); // MongoDb style
+        // const casts = await Cast.find().in('_id', movie.casts); // Mongose query
+
+        return casts;
     }
 }
