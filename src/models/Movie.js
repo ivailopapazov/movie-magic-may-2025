@@ -1,26 +1,18 @@
-import fs from 'node:fs/promises'
-import { v4 as uuid } from 'uuid'
+import { Schema, model } from 'mongoose';
 
-const moviesJson = await fs.readFile('./src/database.json');
-export const movies = JSON.parse(moviesJson);
+const movieSchema = new Schema({
+    title: String,
+    category: String,
+    genre: String,
+    director: String,
+    year: Number,
+    imageUrl: String,
+    rating: Number,
+    description: String,
+});
 
-export default class Movie {
-    constructor(data) {
-        this.data = data;
-    }
+const Movie = model('Movie', movieSchema);
 
-    async save() {
-        // Set unique id
-        this.data.id = uuid();
+export default Movie;
 
-        // Convert rating from string to number
-        this.data.rating = Number(this.data.rating);
-
-        movies.push(this.data);
-
-        await fs.writeFile('./src/database.json', JSON.stringify(movies, null, 4));
-
-        return this.data;
-    }
-}
 
