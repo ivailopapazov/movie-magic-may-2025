@@ -40,12 +40,7 @@ export default {
 
         return movie.save();
     },
-    // async getCasts(movieId) {
-    //     const movie = await this.getOne(movieId);
-
-    //     const casts = await Cast.find({ _id: { $in: movie.casts } }); // MongoDb style
-    //     // const casts = await Cast.find().in('_id', movie.casts); // Mongose query
-
-    //     return casts;
-    // }
+    async delete(movieId) {
+        return Movie.findByIdAndDelete(movieId);
+    }
 }
