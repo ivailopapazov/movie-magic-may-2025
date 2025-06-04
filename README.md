@@ -4,16 +4,15 @@ SoftUni JS Back-End Course Workshop
 ## Bonuses
  - [x] Logout
  - [x] Dynamic navigation
+ - [x] Extract routes to external routes file
+ - [x] Remove gen salt
  - [ ] Edit page
  - [ ] Route guard
  - [ ] Add mongo atlas db
- - [x] Extract routes to external routes file
  - [ ] Auto login on register
- - [x] Remove gen salt
  - [ ] make jwt async
  - [ ] Add rePassword validation (first with model validation)
+ - [ ] Invalidate token
+ - [ ] Name in movie
  - [x] DB Movies Filtering
  - [x] Filter already attached cast
- - [ ] Extract rotues
- - [ ] Name in movie
- - [ ] Invalidate token
