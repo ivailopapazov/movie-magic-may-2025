@@ -12,6 +12,7 @@ export const auth = (req, res, next) => {
         const { id, email } = jsonwebtoken.verify(token, jwtSecret)
 
         req.user = { id, email };
+        res.locals.user = { id, email }; 
 
         next();
     } catch (err) {

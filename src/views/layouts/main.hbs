@@ -16,13 +16,21 @@
             <img src="https://cdn.pixabay.com/photo/2013/07/13/13/36/film-161204_1280.png" alt="logo">
 
             <ul class="menu">
+                {{!-- All Users --}}
                 <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/movies/search">Search</a></li>
+
+                {{#if user}}
+                {{!-- Logged Users --}}
                 <li><a href="/movies/create">Create Movie</a></li>
                 <li><a href="/casts/create">Create Cast</a></li>
-                <li><a href="/movies/search">Search</a></li>
+                <li><a href="/users/logout">Logout</a></li>
+                {{else}}
+                {{!-- Guest Users --}}
                 <li><a href="/users/login">Login</a></li>
                 <li><a href="/users/register">Register</a></li>
-                <li><a href="/users/logout">Logout</a></li>
+                {{/if}}
             </ul>
 
         </nav>

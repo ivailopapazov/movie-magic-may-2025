@@ -2,6 +2,9 @@
 SoftUni JS Back-End Course Workshop
 
 ## Bonuses
+ - [ ] Logout
+ - [ ] Dynamic navigation
+ - [ ] Edit page
  - [ ] Route guard
  - [ ] Add mongo atlas db
  - [x] Extract routes to external routes file
