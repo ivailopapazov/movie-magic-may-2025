@@ -1,6 +1,7 @@
 import express from 'express'
 import movieService from '../services/movieService.js';
 import castService from '../services/castService.js';
+import { Types } from 'mongoose';
 
 const movieController = express.Router();
 
@@ -26,13 +27,16 @@ movieController.get('/:movieId/details', async (req, res) => {
     // Get movie id from params
     const movieId = req.params.movieId;
 
+    // Get current user
+    const userId = req.user?.id;
+
     // Get movie data with populated casts
     const movie = await movieService.getOne(movieId);
 
-    // Get movie cast
-    // const casts = await movieService.getCasts(movieId)
+    // Verify if user is owner
+    const isOwner = movie.owner?.equals(userId);
 
-    res.render('movie/details', { movie });
+    res.render('movie/details', { movie, isOwner });
 });
 
 movieController.get('/search', async (req, res) => {
