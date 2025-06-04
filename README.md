@@ -2,6 +2,7 @@
 SoftUni JS Back-End Course Workshop
 
 ## Bonuses
+ - [ ] Route guard
  - [ ] Add mongo atlas db
  - [x] Extract routes to external routes file
  - [ ] Auto login on register
