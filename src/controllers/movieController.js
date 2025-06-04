@@ -1,7 +1,7 @@
 import express from 'express'
 import movieService from '../services/movieService.js';
 import castService from '../services/castService.js';
-import { Types } from 'mongoose';
+import { getCategoryOptionsViewData } from '../utils/movieUtils.js';
 
 const movieController = express.Router();
 
@@ -105,8 +105,11 @@ movieController.get('/:movieId/edit', async (req, res) => {
         return res.status(403).end();
     }
 
+    // Prepare view data
+    const categoryOptionsViewData = getCategoryOptionsViewData(movie.category);
+
     // Pass movie data to template    
-    res.render('movie/edit', { movie });
+    res.render('movie/edit', { movie, categoryOptions: categoryOptionsViewData });
 });
 
 movieController.post('/:movieId/edit', async (req, res) => {

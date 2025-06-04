@@ -6,13 +6,14 @@ SoftUni JS Back-End Course Workshop
  - [x] Dynamic navigation
  - [x] Extract routes to external routes file
  - [x] Remove gen salt
- - [ ] Check TODOs
+ - [x] Edit page
  - [ ] Select category in edit
  - [ ] Show dynamic title
- - [ ] Edit page
  - [ ] Route guard
- - [ ] Add mongo atlas db
  - [ ] Auto login on register
+
+ - [ ] Check TODOs
+ - [ ] Add mongo atlas db
  - [ ] make jwt async
  - [ ] Add rePassword validation (first with model validation)
  - [ ] Invalidate token
