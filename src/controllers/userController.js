@@ -29,6 +29,9 @@ userController.post('/login', async (req, res) => {
     // call service login
     const token = await userService.login(email, password);
 
+    console.log(token);
+    
+
     // TODO: Set auth cookie
 
     // redirect to home

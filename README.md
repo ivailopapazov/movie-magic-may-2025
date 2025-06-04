@@ -6,6 +6,7 @@ SoftUni JS Back-End Course Workshop
  - [ ] Extract routes to external routes file
  - [ ] Auto login on register
  - [ ] Remove gen salt
+ - [ ] make jwt async
  - [ ] Add rePassword validation (first with model validation)
  - [x] DB Movies Filtering
  - [x] Filter already attached cast
