@@ -7,6 +7,7 @@ import movieController from './controllers/movieController.js';
 import castController from './controllers/castController.js';
 import userController from './controllers/userController.js';
 import cookieParser from 'cookie-parser';
+import { auth } from './middlewares/authMiddleware.js';
 
 // Init express instance
 const app = express();
@@ -19,6 +20,9 @@ app.use(cookieParser());
 
 // Add body parser
 app.use(express.urlencoded());
+
+// Add auth middleware
+app.use(auth);
 
 // Add and config view engine
 app.engine('hbs', handlebars.engine({
