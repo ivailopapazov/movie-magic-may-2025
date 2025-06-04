@@ -7,8 +7,8 @@ SoftUni JS Back-End Course Workshop
  - [x] Extract routes to external routes file
  - [x] Remove gen salt
  - [x] Edit page
- - [ ] Select category in edit
- - [ ] Show dynamic title
+ - [x] Select category in edit
+ - [x] Show dynamic title basic way
  - [ ] Route guard
  - [ ] Auto login on register
 
@@ -18,5 +18,6 @@ SoftUni JS Back-End Course Workshop
  - [ ] Add rePassword validation (first with model validation)
  - [ ] Invalidate token
  - [ ] Name in movie
+ - [ ] Show dynamic title advanced way
  - [x] DB Movies Filtering
  - [x] Filter already attached cast
