@@ -2,8 +2,8 @@
 SoftUni JS Back-End Course Workshop
 
 ## Bonuses
- - [ ] Logout
- - [ ] Dynamic navigation
+ - [x] Logout
+ - [x] Dynamic navigation
  - [ ] Edit page
  - [ ] Route guard
  - [ ] Add mongo atlas db
@@ -16,3 +16,4 @@ SoftUni JS Back-End Course Workshop
  - [x] Filter already attached cast
  - [ ] Extract rotues
  - [ ] Name in movie
+ - [ ] Invalidate token
