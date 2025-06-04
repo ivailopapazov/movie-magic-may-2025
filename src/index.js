@@ -6,12 +6,16 @@ import homeController from './controllers/homeController.js';
 import movieController from './controllers/movieController.js';
 import castController from './controllers/castController.js';
 import userController from './controllers/userController.js';
+import cookieParser from 'cookie-parser';
 
 // Init express instance
 const app = express();
 
 // Add static middleware
 app.use(express.static('./src/public'));
+
+// Add cookie parser
+app.use(cookieParser());
 
 // Add body parser
 app.use(express.urlencoded());
