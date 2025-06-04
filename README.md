@@ -1,13 +1,14 @@
 # movie-magic-may-2025
 SoftUni JS Back-End Course Workshop
 
-## Bonuses
+## TODO
  - [x] Logout
  - [x] Dynamic navigation
  - [x] Extract routes to external routes file
  - [x] Remove gen salt
  - [ ] Check TODOs
  - [ ] Select category in edit
+ - [ ] Show dynamic title
  - [ ] Edit page
  - [ ] Route guard
  - [ ] Add mongo atlas db
