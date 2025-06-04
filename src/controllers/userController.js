@@ -12,7 +12,7 @@ userController.post('/register', async (req, res) => {
     const userData = req.body;
     
     // Register user
-    await userService.register(userData);
+    await userService.register(userData)
 
     // Redirect to login
     res.redirect('/users/login');

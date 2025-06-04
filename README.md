@@ -5,6 +5,7 @@ SoftUni JS Back-End Course Workshop
  - [ ] Add mongo atlas db
  - [ ] Extract routes to external routes file
  - [ ] Auto login on register
+ - [ ] Remove gen salt
  - [x] DB Movies Filtering
  - [x] Filter already attached cast
  - [ ] Extract rotues
