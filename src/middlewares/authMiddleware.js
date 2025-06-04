@@ -12,7 +12,7 @@ export const auth = (req, res, next) => {
         const { id, email } = jsonwebtoken.verify(token, jwtSecret)
 
         req.user = { id, email };
-        res.locals.user = { id, email }; 
+        res.locals.user = { id, email };
 
         next();
     } catch (err) {
@@ -20,3 +20,11 @@ export const auth = (req, res, next) => {
         res.redirect('/users/login');
     }
 };
+
+export const isAuth = (req, res, next) => {
+    if (!req.user) {
+        return res.redirect('/users/login');
+    }
+
+    next()
+}

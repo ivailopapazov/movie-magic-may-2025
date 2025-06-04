@@ -2,14 +2,15 @@ import express from 'express'
 import movieService from '../services/movieService.js';
 import castService from '../services/castService.js';
 import { getCategoryOptionsViewData } from '../utils/movieUtils.js';
+import { isAuth } from '../middlewares/authMiddleware.js';
 
 const movieController = express.Router();
 
-movieController.get('/create', (req, res) => {
+movieController.get('/create', isAuth, (req, res) => {
     res.render('create');
 });
 
-movieController.post('/create', async (req, res) => {
+movieController.post('/create', isAuth, async (req, res) => {
     // Get current userId
     const userId = req.user.id;
 
@@ -49,7 +50,7 @@ movieController.get('/search', async (req, res) => {
     res.render('search', { movies, filter });
 });
 
-movieController.get('/:movieId/attach', async (req, res) => {
+movieController.get('/:movieId/attach', isAuth, async (req, res) => {
     const movieId = req.params.movieId;
 
     // Get movie by id
@@ -62,7 +63,7 @@ movieController.get('/:movieId/attach', async (req, res) => {
     res.render('movie/attach', { movie, casts, pageTitle: 'Attach' });
 });
 
-movieController.post('/:movieId/attach', async (req, res) => {
+movieController.post('/:movieId/attach', isAuth, async (req, res) => {
     // Get movie id
     const movieId = req.params.movieId;
 
@@ -76,7 +77,7 @@ movieController.post('/:movieId/attach', async (req, res) => {
     res.redirect(`/movies/${movieId}/details`);
 });
 
-movieController.get('/:movieId/delete', async (req, res) => {
+movieController.get('/:movieId/delete', isAuth, async (req, res) => {
     // Get movie Id
     const movieId = req.params.movieId;
 
@@ -87,7 +88,7 @@ movieController.get('/:movieId/delete', async (req, res) => {
     res.redirect('/');
 });
 
-movieController.get('/:movieId/edit', async (req, res) => {
+movieController.get('/:movieId/edit', isAuth, async (req, res) => {
     // Get movie id
     const movieId = req.params.movieId;
 
@@ -116,7 +117,7 @@ movieController.get('/:movieId/edit', async (req, res) => {
     });
 });
 
-movieController.post('/:movieId/edit', async (req, res) => {
+movieController.post('/:movieId/edit', isAuth, async (req, res) => {
     // Get movie id
     const movieId = req.params.movieId;
 

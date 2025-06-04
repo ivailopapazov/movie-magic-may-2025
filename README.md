@@ -9,7 +9,7 @@ SoftUni JS Back-End Course Workshop
  - [x] Edit page
  - [x] Select category in edit
  - [x] Show dynamic title basic way
- - [ ] Route guard
+ - [x] Route guard
  - [ ] Auto login on register
 
  - [ ] Check TODOs
