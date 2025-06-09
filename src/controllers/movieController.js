@@ -114,8 +114,8 @@ movieController.get('/:movieId/edit', isAuth, async (req, res) => {
     const isOwner = movie.owner?.equals(userId);
 
     if (!isOwner) {
-        // TODO: Add error handling
-        return res.status(403).end();
+        // return res.render('404', { error: 'You don\' have access to edit this movie' });
+        return res.dataRedirect('/404', { error: 'You don\' have access to edit this movie' });
     }
 
     // Prepare view data

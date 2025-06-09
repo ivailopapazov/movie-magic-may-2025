@@ -2,9 +2,11 @@ import express from 'express'
 import handlebars from 'express-handlebars'
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
+import session from 'express-session';
 
 import { auth } from './middlewares/authMiddleware.js';
 import routes from './routes.js';
+import { tempData } from './middlewares/tempDataMiddleware.js';
 
 // Init express instance
 const app = express();
@@ -18,8 +20,19 @@ app.use(cookieParser());
 // Add body parser
 app.use(express.urlencoded());
 
+// Add session
+app.use(session({
+    secret: 'DASKHWIUAHD&WS*(#@(DN&Q#*(Q#H&*(DHGQ&DH#Q&*GD',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false, httpOnly: true }
+}));
+
 // Add auth middleware
 app.use(auth);
+
+// Use tempData Middleware
+app.use(tempData);
 
 // Add and config view engine
 app.engine('hbs', handlebars.engine({
