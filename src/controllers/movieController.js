@@ -3,11 +3,12 @@ import movieService from '../services/movieService.js';
 import castService from '../services/castService.js';
 import { getCategoryOptionsViewData } from '../utils/movieUtils.js';
 import { isAuth } from '../middlewares/authMiddleware.js';
+import { getErrorMessage } from '../utils/errorUtils.js';
 
 const movieController = express.Router();
 
 movieController.get('/create', isAuth, (req, res) => {
-    res.render('create');
+    res.render('movie/create');
 });
 
 movieController.post('/create', isAuth, async (req, res) => {
@@ -17,11 +18,22 @@ movieController.post('/create', isAuth, async (req, res) => {
     // Get movie data
     const newMovie = req.body;
 
-    // Save Movie
-    await movieService.create(newMovie, userId);
+    try {
+        // Save Movie
+        await movieService.create(newMovie, userId);
 
-    // Redirect to home page
-    res.redirect('/');
+        // Redirect to home page
+        res.redirect('/');
+    } catch (err) {
+        // Prepare view data
+        const categoryOptionsViewData = getCategoryOptionsViewData(newMovie.category);
+
+        res.render('movie/create', {
+            error: getErrorMessage(err),
+            movie: newMovie,
+            categoryOptions: categoryOptionsViewData,
+        });
+    }
 });
 
 movieController.get('/:movieId/details', async (req, res) => {

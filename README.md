@@ -2,14 +2,15 @@
 SoftUni JS Back-End Course Workshop
 
 ## TODO
- - [ ] Check TODOs
+ - [ ] Show dynamic title advanced way
+ - [ ] Redirect with error
  - [ ] Add mongo atlas db
+ - [ ] Check TODOs
  - [ ] make jwt async
- - [ ] Add rePassword validation (first with model validation)
  - [ ] Invalidate token
  - [ ] Name in movie
- - [ ] Show dynamic title advanced way
 
+ - [x] Add rePassword validation (first with model validation)
  - [x] DB Movies Filtering
  - [x] Filter already attached cast
  - [x] Logout
