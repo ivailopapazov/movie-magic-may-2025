@@ -4,11 +4,12 @@ import bcrypt from 'bcrypt';
 const userSchema = new Schema({
     email: {
         type: String,
-        required: true,
+        required: [true, 'User Email is required!'],
+        unique: true, // Not a validator but db index // DB Validation not a model validation
     },
     password: {
         type: String,
-        required: true,
+        required: [true, 'Please provide password!'],
     },
 });
 
