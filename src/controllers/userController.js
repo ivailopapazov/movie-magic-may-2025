@@ -33,14 +33,19 @@ userController.post('/login', async (req, res) => {
     // Get login data
     const { email, password } = req.body;
 
-    // call service login
-    const token = await userService.login(email, password);
+    try {
+        // call service login
+        const token = await userService.login(email, password);
 
-    // Set auth cookie
-    res.cookie('auth', token);
+        // Set auth cookie
+        res.cookie('auth', token);
 
-    // redirect to home
-    res.redirect('/');
+        // redirect to home
+        res.redirect('/');
+    } catch (err) {
+        res.render('user/login', { error: err.message, email });
+    }
+
 });
 
 userController.get('/logout', (req, res) => {

@@ -21,7 +21,7 @@ export default {
 
         // Check if user exists
         if (!user) {
-            return new Error('No such user!');
+            throw new Error('No such user!');
         }
 
         // Validate password
@@ -29,7 +29,7 @@ export default {
 
         // Return error if not valid
         if (!isValid) {
-            return new Error('Invalid password');
+            throw new Error('Invalid password');
         }
 
         // If valid generate token
