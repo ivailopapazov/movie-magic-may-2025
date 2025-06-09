@@ -3,7 +3,7 @@ SoftUni JS Back-End Course Workshop
 
 ## TODO
  - [ ] Show dynamic title advanced way
- - [ ] Redirect with error
+ - [x] Redirect with error
  - [ ] Add mongo atlas db
  - [ ] Check TODOs
  - [ ] make jwt async

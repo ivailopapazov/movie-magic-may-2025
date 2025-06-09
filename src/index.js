@@ -41,13 +41,16 @@ app.engine('hbs', handlebars.engine({
         showRating(rating) {
             return '★'.repeat(Math.floor(rating));
             // return '&#x2605;'.repeat(Math.floor(rating));
+        },
+        setTitle(title) {
+            this.pageTitle = title;
         }
     },
     // Allow handlebars to use prototyp methods and properties of the base mongoose document
     runtimeOptions: {
         allowProtoMethodsByDefault: true,
         allowProtoPropertiesByDefault: true,
-    }
+    },
 }));
 
 // Connect database
