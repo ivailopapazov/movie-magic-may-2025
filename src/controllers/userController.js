@@ -21,7 +21,7 @@ userController.post('/register', async (req, res) => {
         // Redirect to login
         res.redirect('/');
     } catch (err) {
-        res.render('user/register', { error: err.message });
+        res.render('user/register', { error: err.message, email });
     }
 });
 
