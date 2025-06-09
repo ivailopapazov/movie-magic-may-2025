@@ -6,6 +6,16 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'User Email is required!'],
         unique: true, // Not a validator but db index // DB Validation not a model validation
+        // Cusrtom schema validator
+        // validate: {
+        //     validator: async function (value) {
+        //         const existingUser = await User.findOne({ email: value })
+
+        //         if (existingUser) {
+        //             throw new Error('User already exists!');
+        //         }
+        //     }
+        // }
     },
     password: {
         type: String,
@@ -13,8 +23,16 @@ const userSchema = new Schema({
     },
 });
 
+// Validate if user email is unique with custom validator
+// userSchema.path('email').validate(async function (value) {
+//     const existingUser = await User.findOne({ email: value })
+
+//     if (existingUser) {
+//         throw new Error('User already exists!');
+//     }
+// });
+
 userSchema.pre('save', async function () {
-    // const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, 10);
 });
 
